@@ -45,6 +45,8 @@ body {
   margin: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
+  font-family: 'Crimson Pro', serif; /* Add this line */
+  font-weight: 600; /* Optional: for bold effect */
 }
 
 .tagline {
