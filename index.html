@@ -6,6 +6,7 @@
   <title>Newstar NEST</title>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <main class="container">
@@ -47,8 +48,8 @@
         <input type="password" id="confirm-password" placeholder="Confirm Password" required>
         <input type="number" placeholder="Age" required min="1" max="120">
 
-        <!-- ✅ reCAPTCHA checkbox -->
-        <div class="g-recaptcha" data-sitekey="6LfyczIrAAAAADcx5lbjZsvExQZXcu2pHdRMpfEn"></div>
+        <!-- ✅ reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="6LcQdjIrAAAAAKUS5wLN84T9cUkUgOMLYDrTYzSX"></div>
 
         <button type="submit" class="btn">Submit</button>
         <p id="register-error" style="color: red; display: none; font-size: 0.9rem; margin-top: 1rem;"></p>
@@ -58,7 +59,7 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // LOGIN popup logic
+    // LOGIN popup
     function openPopup() {
       document.getElementById("login-popup").style.display = "flex";
     }
@@ -67,7 +68,7 @@
     }
     document.getElementById("login-btn").addEventListener("click", openPopup);
 
-    // REGISTER popup logic
+    // REGISTER popup
     function openRegisterPopup() {
       document.getElementById("register-popup").style.display = "flex";
     }
@@ -82,6 +83,7 @@
       const confirmPassword = document.getElementById("confirm-password").value;
       const errorMsg = document.getElementById("register-error");
 
+      // Password match check
       if (password !== confirmPassword) {
         event.preventDefault();
         errorMsg.textContent = "Passwords do not match.";
@@ -89,6 +91,7 @@
         return;
       }
 
+      // reCAPTCHA check
       const response = grecaptcha.getResponse();
       if (!response) {
         event.preventDefault();
@@ -97,14 +100,11 @@
         return;
       }
 
-      // If everything is valid
+      // If all good
       errorMsg.style.display = "none";
       alert("Registration submitted! (This is a placeholder)");
     });
   </script>
-
-  <!-- reCAPTCHA API -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
 
