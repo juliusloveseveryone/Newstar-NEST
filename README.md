@@ -12,4 +12,4 @@ Level the playing field for new and small content creators through a community-f
 
 ---
 
-Visit the live site 👉 [Click here](https://yourusername.github.io/Newstar-NEST/)
+Visit the live site 👉 [Click here](https://juliusloveseveryone.github.io/Newstar-NEST/)
