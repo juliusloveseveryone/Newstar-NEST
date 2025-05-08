@@ -16,7 +16,7 @@
       </div>
       <div class="buttons">
         <button class="btn" id="login-btn">LOG IN</button>
-        <button id="register-btn" class="btn">REGISTER</button>
+        <button class="btn" id="register-btn">REGISTER</button>
       </div>
     </section>
     <p class="tagline">Where your stories, creativity and originality will be heard of.</p>
@@ -35,25 +35,26 @@
     </div>
   </div>
 
-  <!-- Register Popup -->
-<div id="register-popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
-    <h2>Register</h2>
-    <form id="register-form">
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" id="reg-password" placeholder="Password" required>
-      <input type="password" id="confirm-password" placeholder="Confirm Password" required>
-      <input type="number" placeholder="Age" required min="1" max="120">
-      <button type="submit" class="btn">Submit</button>
-      <p id="register-error" style="color: red; display: none; font-size: 0.9rem; margin-top: 1rem;"></p>
-    </form>
+  <!-- REGISTER POPUP -->
+  <div id="register-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" id="reg-password" placeholder="Password" required>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+        <input type="number" placeholder="Age" required min="1" max="120">
+        <button type="submit" class="btn">Submit</button>
+        <p id="register-error" style="color: red; display: none; font-size: 0.9rem; margin-top: 1rem;"></p>
+      </form>
+    </div>
   </div>
-</div>
 
   <!-- JAVASCRIPT -->
   <script>
+    // LOGIN popup
     function openPopup() {
       document.getElementById("login-popup").style.display = "flex";
     }
@@ -64,47 +65,32 @@
 
     document.getElementById("login-btn").addEventListener("click", openPopup);
 
-    <script>
-  // LOGIN popup
-  function openPopup() {
-    document.getElementById("login-popup").style.display = "flex";
-  }
-
-  function closePopup() {
-    document.getElementById("login-popup").style.display = "none";
-  }
-
-  document.getElementById("login-btn").addEventListener("click", openPopup);
-
-  // REGISTER popup
-  function openRegisterPopup() {
-    document.getElementById("register-popup").style.display = "flex";
-  }
-
-  function closeRegisterPopup() {
-    document.getElementById("register-popup").style.display = "none";
-  }
-
-  document.getElementById("register-btn").addEventListener("click", openRegisterPopup);
-
-  // Form validation
-  document.getElementById("register-form").addEventListener("submit", function(event) {
-    const password = document.getElementById("reg-password").value;
-    const confirmPassword = document.getElementById("confirm-password").value;
-    const errorMsg = document.getElementById("register-error");
-
-    if (password !== confirmPassword) {
-      event.preventDefault();
-      errorMsg.textContent = "Passwords do not match.";
-      errorMsg.style.display = "block";
-    } else {
-      errorMsg.style.display = "none";
-      alert("Registration submitted! (This is a placeholder.)");
-      // Here you would normally submit the data to a server
+    // REGISTER popup
+    function openRegisterPopup() {
+      document.getElementById("register-popup").style.display = "flex";
     }
-  });
-</script>
 
+    function closeRegisterPopup() {
+      document.getElementById("register-popup").style.display = "none";
+    }
+
+    document.getElementById("register-btn").addEventListener("click", openRegisterPopup);
+
+    // Form validation
+    document.getElementById("register-form").addEventListener("submit", function(event) {
+      const password = document.getElementById("reg-password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+      const errorMsg = document.getElementById("register-error");
+
+      if (password !== confirmPassword) {
+        event.preventDefault();
+        errorMsg.textContent = "Passwords do not match.";
+        errorMsg.style.display = "block";
+      } else {
+        errorMsg.style.display = "none";
+        alert("Registration submitted! (This is a placeholder.)");
+      }
+    });
   </script>
 </body>
 </html>
