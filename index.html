@@ -4,48 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Newstar NEST</title>
-  <!-- Correct Google Fonts link (no space after ?): -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-  <div id="login-popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-    <h2>Log In</h2>
-    <form>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit" class="btn">Submit</button>
-    </form>
-  </div>
-</div>
 <body>
-  <script>
-  function openPopup() {
-    document.getElementById("login-popup").style.display = "flex";
-  }
-
-  function closePopup() {
-    document.getElementById("login-popup").style.display = "none";
-  }
-
-  // Attach the popup open function to the login button
-  document.querySelector(".btn").addEventListener("click", openPopup);
-</script>
-
   <main class="container">
     <section class="card">
       <div class="logo-title">
-  <img src="logo.png" alt="Newstar NEST Logo" class="logo" />
-  <h1 class="title">Newstar <strong>NEST</strong></h1>
-</div>
+        <img src="logo.png" alt="Newstar NEST Logo" class="logo" />
+        <h1 class="title">Newstar <strong>NEST</strong></h1>
+      </div>
       <div class="buttons">
-        <button class="btn">LOG IN</button>
+        <button class="btn" id="login-btn">LOG IN</button>
         <button class="btn">REGISTER</button>
       </div>
     </section>
-
     <p class="tagline">Where your stories, creativity and originality will be heard of.</p>
   </main>
+
+  <!-- LOGIN POPUP -->
+  <div id="login-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Log In</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function openPopup() {
+      document.getElementById("login-popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("login-popup").style.display = "none";
+    }
+
+    document.getElementById("login-btn").addEventListener("click", openPopup);
+  </script>
 </body>
 </html>
