@@ -35,8 +35,6 @@
     </div>
   </div>
 
-  <div class="g-recaptcha" data-sitekey="6LexcTIrAAAAAD41EPoF82sgWbcpmRM7f4GcrHNV"></div>
-
   <!-- REGISTER POPUP -->
   <div id="register-popup" class="popup">
     <div class="popup-content">
@@ -48,6 +46,10 @@
         <input type="password" id="reg-password" placeholder="Password" required>
         <input type="password" id="confirm-password" placeholder="Confirm Password" required>
         <input type="number" placeholder="Age" required min="1" max="120">
+        
+        <!-- ✅ CAPTCHA inside the form -->
+        <div class="g-recaptcha" data-sitekey="6LexcTIrAAAAAD41EPoF82sgWbcpmRM7f4GcrHNV"></div>
+        
         <button type="submit" class="btn">Submit</button>
         <p id="register-error" style="color: red; display: none; font-size: 0.9rem; margin-top: 1rem;"></p>
       </form>
@@ -60,25 +62,21 @@
     function openPopup() {
       document.getElementById("login-popup").style.display = "flex";
     }
-
     function closePopup() {
       document.getElementById("login-popup").style.display = "none";
     }
-
     document.getElementById("login-btn").addEventListener("click", openPopup);
 
     // REGISTER popup
     function openRegisterPopup() {
       document.getElementById("register-popup").style.display = "flex";
     }
-
     function closeRegisterPopup() {
       document.getElementById("register-popup").style.display = "none";
     }
-
     document.getElementById("register-btn").addEventListener("click", openRegisterPopup);
 
-    // Form validation
+    // Registration form validation
     document.getElementById("register-form").addEventListener("submit", function(event) {
       const password = document.getElementById("reg-password").value;
       const confirmPassword = document.getElementById("confirm-password").value;
@@ -88,14 +86,24 @@
         event.preventDefault();
         errorMsg.textContent = "Passwords do not match.";
         errorMsg.style.display = "block";
-      } else {
-        errorMsg.style.display = "none";
-        alert("Registration submitted! (This is a placeholder.)");
+        return;
       }
+
+      const response = grecaptcha.getResponse();
+      if (!response) {
+        event.preventDefault();
+        errorMsg.textContent = "Please verify that you're not a robot.";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      // If both validations pass
+      errorMsg.style.display = "none";
+      alert("Registration submitted! (This is a placeholder)");
     });
   </script>
 
+  <!-- reCAPTCHA SCRIPT -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 </body>
 </html>
