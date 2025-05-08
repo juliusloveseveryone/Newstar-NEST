@@ -1,49 +1,56 @@
-/* Base styles */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #7a0e0e;
   color: white;
-  text-align: center;
-}
-
-/* Navigation header */
-.navbar {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: #000;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.logo {
-  width: 50px;
-  height: auto;
-  margin-right: 15px;
-  border-radius: 50%;
-}
-
-.navbar h1 {
-  font-size: 24px;
-  color: white;
-  margin: 0;
-}
-
-.navbar strong {
-  font-weight: bold;
-  color: #e6b800;
-}
-
-/* Main content */
-main {
-  padding: 40px 20px;
+.container {
+  text-align: center;
 }
 
 .card {
   background: linear-gradient(to right, #ccc, #eee);
-  padding: 30px;
+  padding: 40px;
   border-radius: 16px;
   display: inline-block;
   margin-top: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.title {
+  font-size: 28px;
+  color: #7a0e0e;
+  margin: 0;
+}
+
+.title strong {
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn {
@@ -51,7 +58,6 @@ main {
   color: white;
   border: none;
   padding: 12px 24px;
-  margin: 10px;
   font-size: 16px;
   border-radius: 25px;
   cursor: pointer;
@@ -63,7 +69,8 @@ main {
 }
 
 .tagline {
+  margin-top: 40px;
   font-size: 18px;
-  margin-top: 30px;
+  line-height: 1.5;
+  max-width: 90%;
 }
-
