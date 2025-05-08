@@ -46,10 +46,10 @@
         <input type="password" id="reg-password" placeholder="Password" required>
         <input type="password" id="confirm-password" placeholder="Confirm Password" required>
         <input type="number" placeholder="Age" required min="1" max="120">
-        
-        <!-- ✅ CAPTCHA inside the form -->
-        <div class="g-recaptcha" data-sitekey="6LexcTIrAAAAAD41EPoF82sgWbcpmRM7f4GcrHNV"></div>
-        
+
+        <!-- ✅ reCAPTCHA checkbox -->
+        <div class="g-recaptcha" data-sitekey="6LfyczIrAAAAADcx5lbjZsvExQZXcu2pHdRMpfEn"></div>
+
         <button type="submit" class="btn">Submit</button>
         <p id="register-error" style="color: red; display: none; font-size: 0.9rem; margin-top: 1rem;"></p>
       </form>
@@ -58,7 +58,7 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // LOGIN popup
+    // LOGIN popup logic
     function openPopup() {
       document.getElementById("login-popup").style.display = "flex";
     }
@@ -67,7 +67,7 @@
     }
     document.getElementById("login-btn").addEventListener("click", openPopup);
 
-    // REGISTER popup
+    // REGISTER popup logic
     function openRegisterPopup() {
       document.getElementById("register-popup").style.display = "flex";
     }
@@ -97,13 +97,14 @@
         return;
       }
 
-      // If both validations pass
+      // If everything is valid
       errorMsg.style.display = "none";
       alert("Registration submitted! (This is a placeholder)");
     });
   </script>
 
-  <!-- reCAPTCHA SCRIPT -->
+  <!-- reCAPTCHA API -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
+
