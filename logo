@@ -1,5 +1,0 @@
-cd path/to/your/repo
-cp /path/to/logo.png .
-git add index.html style.css
-git commit -m "Add logo to homepage"
-git push
