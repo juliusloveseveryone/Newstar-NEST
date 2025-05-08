@@ -25,12 +25,11 @@ body {
 }
 
 .logo {
-  width: 60px;
-  margin: 0;
+  width: 80px; /* increase logo size */
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem; /* increase text size */
 }
 
 .buttons {
@@ -59,8 +58,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px; /* Reduced from 12px to 6px */
+  gap: 12px; /* space between logo and text */
   margin-bottom: 1rem;
+  padding: 1rem 2rem; /* adds internal space */
+  background-color: #fff; /* optional: make it stand out */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2); /* makes the whole block bigger */
 }
 
 .popup {
