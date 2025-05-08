@@ -26,7 +26,7 @@ body {
 
 .logo {
   width: 100px;
-  margin-bottom: 1rem;
+  margin: 0; /* Remove margin so it aligns better */
 }
 
 .title {
@@ -55,3 +55,10 @@ body {
   color: white;
 }
 
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* spacing between logo and title */
+  margin-bottom: 1rem;
+}
