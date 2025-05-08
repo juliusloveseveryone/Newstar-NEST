@@ -20,6 +20,19 @@
   </div>
 </div>
 <body>
+  <script>
+  function openPopup() {
+    document.getElementById("login-popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("login-popup").style.display = "none";
+  }
+
+  // Attach the popup open function to the login button
+  document.querySelector(".btn").addEventListener("click", openPopup);
+</script>
+
   <main class="container">
     <section class="card">
       <div class="logo-title">
