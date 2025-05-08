@@ -1,0 +1,6 @@
+cd path/to/your/repo
+cp /path/to/logo.png .
+git add logo.png
+git commit -m "Add logo image"
+git push
+
